@@ -17,7 +17,7 @@ def bisect_left(arr, x):
     return left
 
 
-def count_intersection(input_list, draw=True):
+def count_intersection(input_list, draw=True, save=True):
     
     i = 0
     intersection_count = 0
@@ -37,12 +37,12 @@ def count_intersection(input_list, draw=True):
             intersection_count += len(opens) - bisect_left(opens, ends[label])
                 
     if draw:
-        plot_circle(input_list, title='Number of Intersections = {}'.format(intersection_count))
+        plot_circle(input_list, title='Number of Intersections = {}'.format(intersection_count), save=save)
         
     return intersection_count
 
 
-def plot_circle(input_list, title=''):
+def plot_circle(input_list, title='', save=True):
     
     chords = [[None, None] for _ in range(int(len(input_list[0])/2))]
     
@@ -65,5 +65,8 @@ def plot_circle(input_list, title=''):
     ax.set_title(title)
     
     fig.tight_layout()
+    
+    if save:
+        plt.savefig('circle_plot.png', dpi=300)
     
     plt.show()
