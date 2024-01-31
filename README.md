@@ -16,6 +16,7 @@ In `main.py`, enter your sorted set of endpoints for the chords. For example:
 If you want the code to generate a visualization, set `draw=True`, and in order to save the image on the directory, set `save=True`. Otherwise, the result will be also printed in the terminal.
 
 Visualization example:
+
 <img src="circle_plot.png" alt="example_plot" width="300"/>
 
 ### Algorithm:
